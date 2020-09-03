@@ -1,7 +1,7 @@
 class Unityguid < Formula
   desc "List up unity guids, detect confliction and replace"
   homepage "https://github.com/mattak/unityguid"
-  url "https://github.com/mattak/unityguid/archive/1.0.0.tar.gz"
+  url "https://github.com/mattak/unityguid/archive/1.0.1.tar.gz"
   sha256 "3d427c4831efa26c1124f5592fe9b2818ff472646e79eb2e8da39b2e3def56a0"
   license "MIT"
 
