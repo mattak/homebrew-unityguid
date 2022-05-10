@@ -5,46 +5,42 @@
 class Unityguid < Formula
   desc "List up unity guids, detect conflict and replace guids."
   homepage "https://github.com/mattak/unityguid"
-  version "1.0.3"
+  version "1.0.4"
   license "MIT"
 
   on_macos do
-    if Hardware::CPU.intel?
-      url "https://github.com/mattak/unityguid/releases/download/v1.0.3/unityguid_darwin_x86_64.tar.gz"
-      sha256 "0f092aa010bdb43807bf82f143593e1ec734dd2aab995345f0bb89d060271bc7"
+    if Hardware::CPU.arm?
+      url "https://github.com/mattak/unityguid/releases/download/v1.0.4/unityguid_darwin_arm64.tar.gz"
+      sha256 "98605ed2894c19a6ae91174ab2229d81b1f48faec80f74da259ffb609ce93aa1"
 
       def install
-        system "go", "build"
         bin.install "unityguid"
       end
     end
-    if Hardware::CPU.arm?
-      url "https://github.com/mattak/unityguid/releases/download/v1.0.3/unityguid_darwin_arm64.tar.gz"
-      sha256 "d79aa8eff2b0b82c196b73cdefb8b053a823babd3cc663590b0c9d46de7c069f"
+    if Hardware::CPU.intel?
+      url "https://github.com/mattak/unityguid/releases/download/v1.0.4/unityguid_darwin_x86_64.tar.gz"
+      sha256 "ca13d6d45393663053f14c531a60c847a83b94bc94b7e8d761c2734f4dfd4355"
 
       def install
-        system "go", "build"
         bin.install "unityguid"
       end
     end
   end
 
   on_linux do
-    if Hardware::CPU.intel?
-      url "https://github.com/mattak/unityguid/releases/download/v1.0.3/unityguid_linux_x86_64.tar.gz"
-      sha256 "c89702d4943deacb39123bd7e7531d01c818f5bf617763670d674be6900842aa"
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://github.com/mattak/unityguid/releases/download/v1.0.4/unityguid_linux_arm64.tar.gz"
+      sha256 "0c8997bd56b053c33b871e4a3ec48f1afaccec6c284b5f36ef865b522fb915a7"
 
       def install
-        system "go", "build"
         bin.install "unityguid"
       end
     end
-    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/mattak/unityguid/releases/download/v1.0.3/unityguid_linux_arm64.tar.gz"
-      sha256 "361230b8b2f3e8b590dffff577e136698e0c687fc1295c73f747d4a0d92c97cd"
+    if Hardware::CPU.intel?
+      url "https://github.com/mattak/unityguid/releases/download/v1.0.4/unityguid_linux_x86_64.tar.gz"
+      sha256 "cd75cc279a7fe1964c86e8c79a621a6b2854996a29c7f73a1f9772678c9ba5e8"
 
       def install
-        system "go", "build"
         bin.install "unityguid"
       end
     end
